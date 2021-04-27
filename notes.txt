@@ -34,8 +34,8 @@ task 4
 type plugin -> dynamically create the link
 
 task 5
-type ajax -> displays a parced advice.txt (json file, which is an array of strings that makes a sentence) -> loop through array, upper case the strings, and it turns into an h1
+type ajax -> should display a parced advice.txt (json file, which is an array of strings that makes a sentence) -> loop through array, upper case the strings, and it turns into an h1
 
 task 6
-type alphabet -> create a bunch of letter images placed in reversed order
+type alphabet -> create a bunch of letter images (the 26) placed in reversed order
 when an image is clicked, the source is replaced
