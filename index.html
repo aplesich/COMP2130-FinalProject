@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Web Programming: Term Project</title>
+  <style>
+    body{
+      background-color: lightgrey;
+    }
+  </style>
+  <script>
+
+
+  onload=function()
+  {
+    //------------ create textboxes and button ---------------//
+
+    let textbox = document.createElement("input")
+    textbox.type = "text"
+    textbox.class = "txtbox"
+    textbox.id = "txt"
+    textbox.style.marginBottom = "30px";
+    document.body.appendChild(textbox)
+    textbox.focus()
+
+    let myButton = document.createElement("input")
+    myButton.type = "button"
+    myButton.id = "go"
+    myButton.value = "Go"
+    myButton.style.backgroundColor = "DarkSeaGreen";
+    myButton.style.margin = "0 10px";
+    myButton.style.padding = "1px 10px";
+    document.body.appendChild(myButton)
+    
+    document.body.appendChild(document.createElement('br'))
+
+    //--------------- run a certain function when button is pressed ---------------//
+
+    myButton.onclick=function()
+    {
+      var textarea = document.getElementById("txt")
+
+      if(textarea.value.includes("storage"))
+      {
+        CreateStorage()
+      }
+
+      if(textarea.value.includes("alien"))
+      {
+        CreateAlien()
+      }
+
+      if(textarea.value.includes("jquery"))
+      {
+        CreateJquery()
+      }
+
+      if(textarea.value.includes("plugin"))
+      {
+        CreatePlugin()
+      }
+
+      if(textarea.value.includes("ajax"))
+      {
+        CreateAjax()
+      }
+
+      if(textarea.value.includes("alphabet"))
+      {
+        CreateAlphabet()
+      }
+    }
+  }
+
+  //-------------- functions when button is pressed ----------------//
+
+  function CreateStorage(){
+    var storagelink = document.createElement("a");
+    storagelink.href = "./storage.html"
+    storagelink.innerText = "Learn about \"window.localStorage\"";
+    document.body.appendChild(storagelink);
+
+    console.log("storage test")
+  }
+
+  function CreateAlien(){
+    var alien = document.createElement("img");
+    document.body.appendChild(alien);
+    AlienControls()
+    console.log("alien test")
+  }
+
+  function CreateJquery(){
+    
+    console.log("jquery test")
+  }
+
+  function CreatePlugin(){
+    var pluginlink = document.createElement("a");
+    pluginlink.href = "./plugin.html"
+    pluginlink.innerText = "Click here for something cool";
+    document.body.appendChild(pluginlink);  
+
+    console.log("plugin test")
+  }
+
+  function CreateAjax(){
+    
+    console.log("ajax test")
+  }
+
+  function CreateAlphabet(){
+    
+    console.log("alphabet test")
+  }
+
+
+  //-------------- alien's functions ----------------//
+
+  function AlienControls(){
+    
+    console.log("alien function")
+  }
+  </script>
+</head>
+
+<body>
+  <script></script>
+</body>
+
+</html>
