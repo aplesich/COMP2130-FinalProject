@@ -1,4 +1,4 @@
-project (comp 2130)
+project (comp 2130) //git pull + git push 
 
 create a repository
 find a plugin 
