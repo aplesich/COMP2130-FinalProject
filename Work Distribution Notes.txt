@@ -1,0 +1,18 @@
+Work Distribution
+
+Maharlika
+- Index
+- Jquery
+- Json
+- Storage
+- Plugin
+
+Alicia
+- Alien
+- Alphabet
+- Storage
+- Plugin
+
+Completion Goal: May 7
+Deadline: May 9
+
