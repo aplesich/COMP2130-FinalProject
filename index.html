@@ -106,8 +106,19 @@
   }
 
   function CreateAjax(){
+    var r = new XMLHttpRequest()
+    r.open("GET", "advice.txt", true)
+    r.onreadystatechange=loadData
+    r.send(null)
     
-    console.log("ajax test")
+    function loadData(){
+      if(r.readyState == 4)
+      {
+        console.log(r.responseText)
+        console.log("ajax test")
+      }
+    }
+    
   }
 
   function CreateAlphabet(){
