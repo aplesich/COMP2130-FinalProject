@@ -39,8 +39,9 @@
 
     myButton.onclick=function()
     {
-      var textarea = document.getElementById("txt")
-
+      var textarea = document.getElementById("txt");
+      
+      //ADD IN FUNCTION TO CONVERT INPUT TO LOWER CASE
       if(textarea.value.includes("storage"))
       {
         CreateStorage()
@@ -48,7 +49,7 @@
 
       if(textarea.value.includes("alien"))
       {
-        CreateAlien()
+        CreateAlien();
       }
 
       if(textarea.value.includes("jquery"))
@@ -84,7 +85,7 @@
     console.log("storage test")
   }
 
-  function CreateAlien(){
+  function createAlien(){
     var alien = document.createElement("img");
     document.body.appendChild(alien);
     AlienControls()
@@ -110,23 +111,64 @@
     console.log("ajax test")
   }
 
+
+
+// Alicia 
   function CreateAlphabet(){
     
-    console.log("alphabet test")
+    for(let i = 'a'.charCodeAt(0); i <= 'z'.charCodeAt(0); i++)
+        {
+            // console.log(String.fromCharCode(i))
+            var myLetter = String.fromCharCode(i)
+            var myImage = document.createElement('img')
+            myImage.src = "images/letters/" + myLetter + ".png"
+            myImage.id = myLetter
+            myImage.height = 40
+
+
+
+
+            myImage.onclick = function()
+            {
+              var allImages = document.getElementsByTagName("img")
+              var imageSrc = allImages.src
+              for (i=0;i<26;i++)
+              {
+                if(imageSrc != this.src)
+                {
+                   
+                   allImages[i].src = this.src
+                }
+              }
+            }
+
+            document.body.appendChild(myImage)
+
+
+            /*var con = document.getElementById('con');
+          var els = Array.prototype.slice.call(allImages.childNodes);
+          for (var i = els.length -1; i>=0; i--) {
+              con.appendChild(els[i]);
+          }*/
+        }
+        
+   
   }
 
 
   //-------------- alien's functions ----------------//
 
-  function AlienControls(){
+  // function AlienControls(){
     
-    console.log("alien function")
-  }
-  </script>
+  //   console.log("alien function")
+  // }
+  //
+   </script>
 </head>
 
 <body>
-  <script></script>
+  <script src="alien.js"></script>
+  <script src="alphabet.js"></script>
 </body>
 
 </html>
