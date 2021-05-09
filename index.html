@@ -13,9 +13,9 @@
 
 
   onload=function()
-  {
-    //------------ create textboxes and button ---------------//
+  { 
 
+    //------------ create text boxes and button ---------------//
     var textbox = document.createElement("input")
     textbox.type = "text"
     textbox.class = "txtbox"
@@ -37,13 +37,11 @@
     document.body.appendChild(document.createElement('br'))
 
     //--------------- run a certain function when button is pressed ---------------//
-
     myButton.onclick=function()
     {
       var textarea = document.getElementById("txt");
       var docImage = document.images.length;
       
-      //ADD IN FUNCTION TO CONVERT INPUT TO LOWER CASE
       if(textarea.value.includes("storage"))
       {
         CreateStorage()
@@ -78,6 +76,7 @@
       if(docImage = 1 && textarea.value.includes("walk"))
       {
           console.log("walk")
+          moveAlienRight();
       }
 
       if(docImage = 1 && textarea.value.includes("run"))
@@ -98,143 +97,147 @@
 
   //-------------- functions when button is pressed ----------------//
   //-------------- Local Storage ----------------//
-  function CreateStorage(){
-    var storagelink = document.createElement("a");
-    storagelink.href = "./storage.html"
-    storagelink.innerText = "Learn about \"window.localStorage\"";
-    document.body.appendChild(storagelink);
+    function CreateStorage(){
+      var storagelink = document.createElement("a");
+      storagelink.href = "./storage.html"
+      storagelink.innerText = "Learn about \"window.localStorage\"";
+      document.body.appendChild(storagelink);
 
-    console.log("storage test")
-  }
+      console.log("storage test")
+    }
 
-  //-------------- Jquery Images and Styling ----------------//
-  function CreateJquery(){
-    
-    console.log("jquery test")
-  }
+    //-------------- Jquery Images and Styling ----------------//
+    function CreateJquery(){
+      
+      console.log("jquery test")
+    }
 
-  //-------------- Plugin ----------------//
-  function CreatePlugin(){
-    var pluginlink = document.createElement("a");
-    pluginlink.href = "./plugin.html"
-    pluginlink.innerText = "Click here for something cool";
-    document.body.appendChild(pluginlink);  
+    //-------------- Plugin ----------------//
+    function CreatePlugin(){
+      var pluginlink = document.createElement("a");
+      pluginlink.href = "./plugin.html"
+      pluginlink.innerText = "Click here for something cool";
+      document.body.appendChild(pluginlink);  
 
-    console.log("plugin test")
-  }
+      console.log("plugin test")
+    }
 
-  //-------------- Ajax ----------------//
-  function CreateAjax(){
-    
-    console.log("ajax test")
-  }
+    //-------------- Ajax ----------------//
+    function CreateAjax(){
+      
+      console.log("ajax test")
+    }
 
- //-------------- Alphabet ----------------//
-  // Alicia 
-  function CreateAlphabet(){
-    
-    for(let i = 'z'.charCodeAt(0); i >= 'a'.charCodeAt(0); i--)
-        {
-            // console.log(String.fromCharCode(i))
-            var myLetter = String.fromCharCode(i)
-            var myImage = document.createElement('img')
-            myImage.src = "images/letters/" + myLetter + ".png"
-            myImage.id = myLetter
-            myImage.height = 40
+  //-------------- Alphabet ----------------//
+    // Alicia 
+    function CreateAlphabet(){
+      
+      for(let i = 'z'.charCodeAt(0); i >= 'a'.charCodeAt(0); i--)
+          {
+              // console.log(String.fromCharCode(i))
+              var myLetter = String.fromCharCode(i)
+              var myImage = document.createElement('img')
+              myImage.src = "images/letters/" + myLetter + ".png"
+              myImage.id = myLetter
+              myImage.height = 40
 
-            myImage.onclick = function()
-            {
-              var allImages = document.getElementsByTagName("img")
-              var imageSrc = allImages.src
-              for (i=0;i<26;i++)
+              myImage.onclick = function()
               {
-                if(imageSrc != this.src)
+                var allImages = document.getElementsByTagName("img")
+                var imageSrc = allImages.src
+                for (i=0;i<26;i++)
                 {
-                   
-                   allImages[i].src = this.src
+                  if(imageSrc != this.src)
+                  {
+                    
+                    allImages[i].src = this.src
+                  }
                 }
               }
-            }
 
-            document.body.appendChild(myImage)
+              document.body.appendChild(myImage)
 
-        }
-        
-   
-  }
+          }
+          
+    
+    }
 
-//-------------- Alien ----------------//
-  function CreateAlien()
-  {
-    var alien = document.createElement("img");
-    alien.src = "images/alien/alienrwalk0.gif"
-    alien.id = "alien"
-    document.body.appendChild(alien);
-  }
-
-
-//-------------- Alien Walk ----------------//
-    function AlienWalk()
+  //-------------- Alien ----------------//
+  //Alicia
+    function CreateAlien()
     {
-                /*Creating Variables*/
-                    alienMoveTimer = null;
-                    alienUpTimer = null;
-
-                /*Setting Up Alien Gifs*/
-                    stepNumber = 0;
-
-                    function takeRStep() 
-                    {
-                      stepNumber++;
-                      if (stepNumber >= 30)
-                      {
-                        stepNumber = 0;
-                      }
-                      alien.src = "alien/alienrwalk" + stepNumber + ".gif";
-                    }
-
-                    function takeLStep() 
-                    {
-                      stepNumber++;
-                      if (stepNumber >= 30)
-                      {
-                        stepNumber = 0;
-                      }
-                      alien.src = "alien/alienlwalk" + stepNumber + ".gif";
-                    }
-
-
-                /*Setting up Alien Movement*/
-                    //setting up alien to move right//
-                    function moveAlienRight()
-                    {
-                      clearInterval(alienMoveTimer);
-                      alienMoveTimer = setInterval(function ()
-                      {
-                        takeRStep();
-                        //dis_Measure(); //this function is called later to detect screen edge
-                        alien.style.left = parseInt(alien.style.left) + 1 + "px";
-                      }
-                      , 100);
-                    }
-                    //setting up alien to move left//   
-                    function moveAlienLeft()
-                    {
-                      clearInterval(alienMoveTimer);
-                      alienMoveTimer = setInterval(function ()
-                      {
-                        takeLStep();
-                        //dis_Measure(); //this function is called later to detect screen edge
-                        alien.style.left = parseInt(alien.style.left) - 1 + "px";
-                      }
-                      , 100);
-                    }
-
-                /*Setting Up Screen-edge Detection*/
+      var alien = document.createElement("img");
+      alien.src = "images/alien/alienrwalk0.gif";
+      alien.id = "alien";
+      alien.style.position = "absolute";
+      alien.style.left = "10px"
+      document.body.appendChild(alien);
     }
 
 
-}
+    /*Creating Variables*/
+        alienMoveTimer = null;
+
+      /*Setting Up Alien Gifs*/
+          stepNumber = 0;
+
+          function takeRStep() 
+          {
+            stepNumber++;
+            if (stepNumber >= 30)
+            {
+              stepNumber = 0;
+            }
+            alien.src = "images/alien/alienrwalk" + stepNumber + ".gif";
+          }
+
+          function takeLStep() 
+          {
+            stepNumber++;
+            if (stepNumber >= 30)
+            {
+              stepNumber = 0;
+            }
+            alien.src = "images/alien/alienlwalk" + stepNumber + ".gif";
+          }
+
+
+      /*Setting up Alien Movement*/
+          function moveAlienRight()
+          {
+            clearInterval(alienMoveTimer);
+            alienMoveTimer = setInterval(function ()
+            {
+              takeRStep();
+              //dis_Measure(); //this function is called later to detect screen edge
+              document.getElementById("alien").style.left = parseInt(document.getElementById("alien").style.left) + 1 + "px";
+            }
+            , 100);
+          }
+
+          function moveAlienLeft()
+          {
+            clearInterval(alienMoveTimer);
+            alienMoveTimer = setInterval(function ()
+            {
+              takeLStep();
+              //dis_Measure(); //this function is called later to detect screen edge
+              alien.style.left = parseInt(alien.style.left) - 1 + "px";
+            }
+            , 100);
+          }
+
+      /*Setting Up Screen-edge Detection*/
+      
+      // window.onload = setupTimers();
+      }
+
+
+
+
+
+
+
   </script>
 </head>
 
