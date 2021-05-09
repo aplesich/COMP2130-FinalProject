@@ -168,25 +168,20 @@
             myImage.src = "images/letters/" + myLetter + ".png"
             myImage.id = myLetter
             myImage.height = 40
+            myImage.classList = "abc"
             myImage.onclick = function()
             {
-              var allImages = document.getElementsByTagName("img")
+              var allImages = document.getElementsByClassName("abc")
               var imageSrc = allImages.src
               for (i=0;i<26;i++)
               {
                 if(imageSrc != this.src)
                 {
-                  
                   allImages[i].src = this.src
                 }
               }
             }
             document.body.appendChild(myImage)
-            /*var con = document.getElementById('con');
-          var els = Array.prototype.slice.call(allImages.childNodes);
-          for (var i = els.length -1; i>=0; i--) {
-              con.appendChild(els[i]);
-          }*/
         }
     }
 
@@ -343,13 +338,6 @@
             }
 
 }
-
-
-
-
-
-
-
 
   </script>
 </head>
