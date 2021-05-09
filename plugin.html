@@ -4,13 +4,210 @@
 <head>
   <meta charset="UTF-8">
   <title>Jquery Plugin</title>
-  <style></style>
-  <script></script>
+  <style>
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(17, 10, 39);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  h1 {
+    color: white;
+    font-size: 5em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 0;
+    margin-top: 1em;
+  }
+
+  h2 {
+    color: rgba(255, 255, 255, 0.768);
+    font-size: 2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1;
+    margin-bottom: 2em;
+    margin: 10px;
+    text-align: center;
+  }
+
+  .canvas-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 60%;
+  }
+
+  .canvas-size {
+    width: 500px;
+    margin: 10px;
+    border-radius: 500px;
+  }
+  .zdog-canvas1 {
+    background: rgb(255, 221, 187);
+    cursor: move;
+  }
+
+  .zdog-canvas2 {
+    background: rgb(193, 255, 187);
+    cursor: move;
+  }
+
+  .zdog-canvas3 {
+    background: rgb(187, 233, 255);
+    cursor: move;
+  }
+
+  .zdog-canvas4 {
+    background: rgb(255, 250, 187);
+    cursor: move;
+  }
+
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+  <script>
+    onload=function()
+    {
+
+      // tutorial: https://zzz.dog/getting-started
+      // Made with Zdog
+
+      ////////////////////////////////////////////////////////////////////////
+
+      // create canvas selector
+      const illo = new Zdog.Illustration({
+        // set canvas with selector
+        element: '.zdog-canvas1',
+        zoom: 2.5,
+      });
+
+      let dome = new Zdog.Hemisphere({
+      addTo: illo,
+      diameter: 50,
+      // fill enabled by default
+      // disable stroke for crisp edge
+      stroke: false,
+      rotate: { x: -Zdog.TAU/10 },
+      color: '#C25',
+      backface: '#EA0',
+      });
+      
+
+      function animate() {
+        illo.rotate.y += 0.03;
+        illo.updateRenderGraph();
+        requestAnimationFrame( animate );
+      }
+
+      animate();
+
+      ////////////////////////////////////////////////////////////////
+
+        // create canvas selector
+      const illo2 = new Zdog.Illustration({
+      // set canvas with selector
+      element: '.zdog-canvas2',
+      zoom: 2.3,
+      });
+
+      let partyHat = new Zdog.Cone({
+      addTo: illo2,
+      diameter: 50,
+      length: 50,
+      stroke: false,
+      translate: { y: -5 },
+      rotate: { x: -Zdog.TAU/10 },
+      color: '#636',
+      backface: '#C25',
+      });
+
+      function animate2() {
+        illo2.rotate.y -= 0.03;
+        illo2.updateRenderGraph();
+        requestAnimationFrame( animate2 );
+      }
+
+      animate2();
+
+      ////////////////////////////////////////////////////////////////
+        
+      // create canvas selector
+        const illo3 = new Zdog.Illustration({
+      // set canvas with selector
+      element: '.zdog-canvas3',
+      zoom: 2,
+      });
+
+      let can = new Zdog.Cylinder({
+      addTo: illo3,
+      diameter: 50,
+      length: 50,
+      stroke: false,
+      rotate: { x: -Zdog.TAU/10 },
+      color: '#C25',
+      backface: '#E62',
+      });
+
+      function animate3() {
+        illo3.rotate.y += 0.03;
+        illo3.updateRenderGraph();
+        requestAnimationFrame( animate3 );
+      }
+
+      animate3();
+
+    ////////////////////////////////////////////////////////////////
+      
+    // create canvas selector
+    const illo4 = new Zdog.Illustration({
+    // set canvas with selector
+    element: '.zdog-canvas4',
+    zoom: 2,
+    });
+
+    let box = new Zdog.Box({
+    addTo: illo4,
+    width: 50,
+    height: 50,
+    depth: 50,
+    rotate: { x: -Zdog.TAU/5 },
+    stroke: false,
+    color: '#C25', // default face color
+    leftFace: '#EA0',
+    rightFace: '#E62',
+    topFace: '#ED0',
+    bottomFace: '#636',
+    });
+
+    function animate4() {
+      illo4.rotate.y -= 0.03;
+      illo4.updateRenderGraph();
+      requestAnimationFrame( animate4 );
+    }
+
+    animate4();
+
+    }
+  </script>
 </head>
 
 <body>
-  <p>Here you will show off any jquery plugin you want. There are some awesome and useful jquery plugins, and you can choose any one. Clearly, the more “wow” it has, the better it is.</p>
-  <script></script>
+  <h1>Zdog</h1>
+  <h2>Round, flat, designer-friendly
+    pseudo-3D engine for canvas & SVG</h2>
+  <div class="canvas-container">
+    <canvas class="zdog-canvas1 canvas-size"></canvas>
+    <canvas class="zdog-canvas2 canvas-size"></canvas>
+    <canvas class="zdog-canvas3 canvas-size"></canvas>
+    <canvas class="zdog-canvas4 canvas-size"></canvas>
+  </div>
 </body>
 
 </html>
