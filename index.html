@@ -86,6 +86,8 @@
       if(docImage = 1 && textarea.value.includes("stop"))
       {
           console.log("stop")
+          stopMoving();
+          
       }
       if(docImage = 1 && textarea.value.includes("bye"))
       {
@@ -225,6 +227,15 @@
               alien.style.left = parseInt(alien.style.left) - 1 + "px";
             }
             , 100);
+          }
+
+          function stopMoving()
+          {
+            if (alienMoveTimer != null) 
+            {
+              clearInterval(alienMoveTimer);
+              alienMoveTimer = null;
+            }
           }
 
       /*Setting Up Screen-edge Detection*/

@@ -26,6 +26,8 @@ type run -> alien moves faster
 type stop -> alien stops moving
 type bye -> display: none
 
+(Notes: struggled to get the alien to move because it wasn't positioned absolute)
+
 task 3 (MAHARLIKA)
 type jquery -> 4 images get created (append child)
 find the second image -> it will get a red border when it is clicked
