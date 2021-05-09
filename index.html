@@ -80,27 +80,27 @@
 
               /*Alien Stuff*/
               //Alicia
-              if(textarea.value.includes("alien"))
+              if(text.includes("alien"))
               {
                 CreateAlien();
               }
-              if(docImage = 1 && textarea.value.includes("walk"))
+              if(docImage = 1 && text.includes("walk"))
               {
                   console.log("walk")
                   moveAlienRight();
               }
-              if(docImage = 1 && textarea.value.includes("run"))
+              if(docImage = 1 && text.includes("run"))
               {
                   console.log("run")
                   runAlienRight();
               }
-              if(docImage = 1 && textarea.value.includes("stop"))
+              if(docImage = 1 && text.includes("stop"))
               {
                   console.log("stop")
                   stopMoving();
                   
               }
-              if(docImage = 1 && textarea.value.includes("bye"))
+              if(docImage = 1 && text.includes("bye"))
               {
                   console.log("bye")
                   document.getElementById("alien").style = "display:none;"
@@ -219,7 +219,8 @@
         alien.src = "images/alien/alienrwalk0.gif";
         alien.id = "alien";
         alien.style.position = "absolute";
-        alien.style.left = "10px"
+        alien.style.left = "10px";
+        alien.style.margin = "50px";
         document.body.appendChild(alien);
       }
 
