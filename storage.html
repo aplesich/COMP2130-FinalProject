@@ -9,8 +9,54 @@
 </head>
 
 <body>
-  <p>storage.html is an HTML page that uses your own words and or images to explain how window.localStorage works. You will be teaching me (your instructor) how it works. There are lots of tutorials out there, but you must use your own words and your own demonstrations. The clearer your tutorial is, and the better your demonstration is, the higher your mark will be. So, give a short write up with explanations and examples of localStorage, plus a demo on this page.</p>
-  <script></script>
+  <div>
+    <h1>localStorage</h1>
+    <br><br>
+    <h2>Definition </h2>
+    <p>localStorage is a method we may use to store data locally within the user's browser with no expiration date. localStroage will hold the data, with no expiry date, as a result the data will not be deleted even if the browser is closed and opened again.
+    <br>
+    localStorage can be accessed rather quickly compared to back end storage methods, that is why it is an ideal way for a user to store a small amount of relevant data they want to access later. 
+    </p>
+
+    <h2>Benefits</h2>
+    <ul>
+      <li>It stores up to 5-10MB of data , the amount of storage allowed is dependant on the browser</li>
+      <li>Easy to use – no need for a web server or backend database.</li>
+      <li>Great for getting an idea up and running and for testing purposes.</li>
+    </ul>
+
+    <h2>Cautions</h2>
+    <ul>
+      <li>Can only be text, data will always be a “read-only” format</li>
+      <li>Anything stored with localstorage is not secure, because it can be accessed relatively quickly with code. As a result, we should never store private or personal information through localStorage.</li>
+    </ul>
+
+    <h2>Syntax</h2>
+    <h3>Add data</h3>
+    <p>To add the data in localStorage, both key and value are required to pass in setItem() function.</p>
+    <ul>
+      <li>localStorage.setItem("girl", "Helen");  </li>
+    </ul>
+
+    <h3>Retrieve data</h3>
+    <p>A key is required to retrieve the data from storage and a JavaScript variable to store the returned data.</p>
+    <ul>
+      <li>var storedData = localStorage.getItem("girl");</li>
+    </ul>
+
+    <h3>Remove data</h3>
+    <p>The same key is required to remove the value attached with it.</p>
+    <ul>
+      <li>localStorage.removeItem("girl");  </li>
+    </ul>
+
+    <h3>Clear localStorage</h3>
+    <p>Using a simple clear() function, it will remove all the localStorage data:</p>
+    <ul>
+      <li>localStorage.clear()  </li>
+    </ul>
+
+  </div>
 </body>
 
 </html>
