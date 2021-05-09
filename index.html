@@ -17,327 +17,333 @@
   onload=function()
   { 
 
-    //------------ create text boxes and button ---------------//
-    var textbox = document.createElement("input")
-    textbox.type = "text"
-    textbox.class = "txtbox"
-    textbox.id = "txt"
-    textbox.style.margin = "20px";
-    textbox.style.padding = "5px";
-    textbox.style.width = "15em";
-    document.body.appendChild(textbox)
+      //------------ create text boxes and button ---------------//
+      var textbox = document.createElement("input")
+      textbox.type = "text"
+      textbox.class = "txtbox"
+      textbox.id = "txt"
+      textbox.style.margin = "20px";
+      textbox.style.padding = "5px";
+      textbox.style.width = "15em";
+      document.body.appendChild(textbox)
 
 
-    var myButton = document.createElement("input")
-    myButton.type = "button"
-    myButton.id = "go"
-    myButton.value = "Go"
-    myButton.style.margin = "0 -10px";
-    myButton.style.padding = "6px 11px";
-    myButton.style.border = "1px solid black";
-    myButton.style.position = "relative";
-    myButton.style.right = "12px";
-    myButton.style.backgroundColor = "#ADDAB9";
-    document.body.appendChild(myButton)
+      var myButton = document.createElement("input")
+      myButton.type = "button"
+      myButton.id = "go"
+      myButton.value = "Go"
+      myButton.style.margin = "0 -10px";
+      myButton.style.padding = "6px 11px";
+      myButton.style.border = "1px solid black";
+      myButton.style.position = "relative";
+      myButton.style.right = "12px";
+      myButton.style.backgroundColor = "#ADDAB9";
+      document.body.appendChild(myButton)
 
-    document.body.appendChild(document.createElement('br'))
+      document.body.appendChild(document.createElement('br'))
 
-    //--------------- run a certain function when button is pressed ---------------//
-    myButton.onclick=function()
-    {
-      var textarea = document.getElementById("txt");
-      var docImage = document.images.length;
-      var text = textarea.value.toLowerCase()
-
-      if(text.includes("storage"))
+      //--------------- run a certain function when button is pressed ---------------//
+      myButton.onclick=function()
       {
-        CreateStorage()
-        CreateBr()
-      }
+              var textarea = document.getElementById("txt");
+              var docImage = document.images.length;
+              var text = textarea.value.toLowerCase();
 
-      if(text.includes("jquery"))
-      {
-        CreateJquery()
-        CreateBr()
-      }
-
-      if(text.includes("plugin"))
-      {
-        CreatePlugin()
-        CreateBr()
-      }
-
-      if(text.includes("ajax"))
-      {
-        CreateAjax()
-        CreateBr()
-      }
-
-      if(text.includes("alphabet"))
-      {
-        CreateAlphabet()
-      }
-
-      /*Alien Stuff*/
-      //Alicia
-      if(textarea.value.includes("alien"))
-      {
-        CreateAlien();
-      }
-      if(docImage = 1 && textarea.value.includes("walk"))
-      {
-          console.log("walk")
-          moveAlienRight();
-      }
-      if(docImage = 1 && textarea.value.includes("run"))
-      {
-          console.log("run")
-          runAlienRight();
-      }
-      if(docImage = 1 && textarea.value.includes("stop"))
-      {
-          console.log("stop")
-          stopMoving();
-          
-      }
-      if(docImage = 1 && textarea.value.includes("bye"))
-      {
-          console.log("bye")
-          document.getElementById("alien").style = "display:none;"
-      }
-    }
-  
-
- //-------------- functions when button is pressed ----------------//
-      function CreateBr()
-      {
-        var br = document.createElement("br");
-        document.body.appendChild(br);
-      }
- //-------------- Local Storage ----------------//
-  //Both
-      function CreateStorage()
-      {
-        var storagelink = document.createElement("a");
-        storagelink.href = "./storage.html"
-        storagelink.innerText = "Learn about \"window.localStorage\"";
-        document.body.appendChild(storagelink);
-
-
-        console.log("storage test")
-      }
-//-------------- Plugin ----------------//
-//Both
-      function CreatePlugin()
-      {
-        var pluginlink = document.createElement("a");
-        pluginlink.href = "./plugin.html"
-        pluginlink.innerText = "Click here for something cool";
-        document.body.appendChild(pluginlink);  
-
-        console.log("plugin test")
-      }
-
-//-------------- Jquery Images and Styling ----------------//
-//Maharlika
-       function CreateJquery()
-        {
-        for(let i = 0; i < 4; i++) 
-        {
-          const img = document.createElement("img");
-          img.src = "http://placekitten.com/600/700";
-          img.style.margin = "10px";
-          document.body.appendChild(img);
-        }
-
-        $("img").width("200px");
-
-        $("img").eq(1).click(function()
-         {$(this).css('border', '15px solid red');})
-        console.log("jquery test")
-        }
-
-  //-------------- Alphabet ----------------//
-  // Alicia 
-    function CreateAlphabet(){
-      
-      for(let i = 'z'.charCodeAt(0); i >= 'a'.charCodeAt(0); i--)
-          {
-              // console.log(String.fromCharCode(i))
-              var myLetter = String.fromCharCode(i)
-              var myImage = document.createElement('img')
-              myImage.src = "images/letters/" + myLetter + ".png"
-              myImage.id = myLetter
-              myImage.height = 40
-
-
-              myImage.onclick = function()
+              if(text.includes("storage"))
               {
-                var allImages = document.getElementsByTagName("img")
-                var imageSrc = allImages.src
-                for (i=0;i<26;i++)
-                {
-                  if(imageSrc != this.src)
-                  {
-                    
-                    allImages[i].src = this.src
-                  }
-                }
-            }
+                CreateStorage()
+                CreateBr()
+              }
 
-//-------------- Ajax ----------------//
-//Maharlika
-  function CreateAjax()
+              if(text.includes("jquery"))
+              {
+                CreateJquery()
+                CreateBr()
+              }
+
+              if(text.includes("plugin"))
+              {
+                CreatePlugin()
+                CreateBr()
+              }
+
+              if(text.includes("ajax"))
+              {
+                CreateAjax()
+                CreateBr()
+              }
+
+              if(text.includes("alphabet"))
+              {
+                CreateAlphabet()
+              }
+
+              /*Alien Stuff*/
+              //Alicia
+              if(textarea.value.includes("alien"))
+              {
+                CreateAlien();
+              }
+              if(docImage = 1 && textarea.value.includes("walk"))
+              {
+                  console.log("walk")
+                  moveAlienRight();
+              }
+              if(docImage = 1 && textarea.value.includes("run"))
+              {
+                  console.log("run")
+                  runAlienRight();
+              }
+              if(docImage = 1 && textarea.value.includes("stop"))
+              {
+                  console.log("stop")
+                  stopMoving();
+                  
+              }
+              if(docImage = 1 && textarea.value.includes("bye"))
+              {
+                  console.log("bye")
+                  document.getElementById("alien").style = "display:none;"
+              }
+      }
+    
+
+  //-------------- functions when button is pressed ----------------//
+        function CreateBr()
+        {
+          var br = document.createElement("br");
+          document.body.appendChild(br);
+        }
+  //-------------- Local Storage ----------------//
+    //Both
+        function CreateStorage()
+        {
+          var storagelink = document.createElement("a");
+          storagelink.href = "./storage.html"
+          storagelink.innerText = "Learn about \"window.localStorage\"";
+          document.body.appendChild(storagelink);
+
+
+          console.log("storage test")
+        }
+  //-------------- Plugin ----------------//
+  //Both
+        function CreatePlugin()
+        {
+          var pluginlink = document.createElement("a");
+          pluginlink.href = "./plugin.html"
+          pluginlink.innerText = "Click here for something cool";
+          document.body.appendChild(pluginlink);  
+
+          console.log("plugin test")
+        }
+
+  //-------------- Jquery Images and Styling ----------------//
+  //Maharlika
+        function CreateJquery()
+          {
+              for(let i = 0; i < 4; i++) 
+              {
+                const img = document.createElement("img");
+                img.src = "http://placekitten.com/600/700";
+                img.style.margin = "10px";
+                document.body.appendChild(img);
+              }
+
+          $("img").width("200px");
+            $("img").eq(1).click(function()
+            {$(this).css('border', '15px solid red');})
+            console.log("jquery test")
+          }
+          
+
+    //-------------- Alphabet ----------------//
+    // Alicia 
+    function CreateAlphabet(){
+        for(let i = 'z'.charCodeAt(0); i >= 'a'.charCodeAt(0); i--)
+        {
+            // console.log(String.fromCharCode(i))
+            var myLetter = String.fromCharCode(i)
+            var myImage = document.createElement('img')
+            myImage.src = "images/letters/" + myLetter + ".png"
+            myImage.id = myLetter
+            myImage.height = 40
+            myImage.onclick = function()
             {
-                var r = new XMLHttpRequest()
-                r.open("GET", "advice.txt", true)
-                r.onreadystatechange=loadData
-                r.send(null)
-
-                function loadData()
+              var allImages = document.getElementsByTagName("img")
+              var imageSrc = allImages.src
+              for (i=0;i<26;i++)
+              {
+                if(imageSrc != this.src)
                 {
-                  if(r.readyState == 4)
-                  {
-                    var adviceTxt = r.responseText
-                    var adviceArray = JSON.parse(adviceTxt)
-                    var advice = adviceArray.join(" ")
-
-                    var adviceUp = advice.toUpperCase()
-
-                    var h1 = document.createElement("h1");
-                    h1.innerText = adviceUp;
-                    document.body.appendChild(h1);
-                  }
+                  
+                  allImages[i].src = this.src
                 }
-            document.body.appendChild(myImage);
+              }
             }
-
-
-
-  //-------------- Alien ----------------//
-  //Alicia
-    function CreateAlien()
-    {
-      var alien = document.createElement("img");
-      alien.src = "images/alien/alienrwalk0.gif";
-      alien.id = "alien";
-      alien.style.position = "absolute";
-      alien.style.left = "10px"
-      document.body.appendChild(alien);
+            document.body.appendChild(myImage)
+            /*var con = document.getElementById('con');
+          var els = Array.prototype.slice.call(allImages.childNodes);
+          for (var i = els.length -1; i>=0; i--) {
+              con.appendChild(els[i]);
+          }*/
+        }
     }
 
+  //-------------- Ajax ----------------//
+  //Maharlika
+    function CreateAjax()
+              {
+                  var r = new XMLHttpRequest()
+                  r.open("GET", "advice.txt", true)
+                  r.onreadystatechange=loadData
+                  r.send(null)
 
-    /*Creating Variables*/
-        alienMoveTimer = null;
+                  function loadData()
+                  {
+                    if(r.readyState == 4)
+                    {
+                      var adviceTxt = r.responseText
+                      var adviceArray = JSON.parse(adviceTxt)
+                      var advice = adviceArray.join(" ")
 
-      /*Setting Up Alien Gifs*/
-          stepNumber = 0;
+                      var adviceUp = advice.toUpperCase()
 
-          function takeRStep() 
-          {
-            stepNumber++;
-            if (stepNumber >= 30)
+                      var h1 = document.createElement("h1");
+                      h1.innerText = adviceUp;
+                      document.body.appendChild(h1);
+                    }
+                  }
+              document.body.appendChild(myImage);
+              }
+
+
+
+    //-------------- Alien ----------------//
+    //Alicia
+      function CreateAlien()
+      {
+        var alien = document.createElement("img");
+        alien.src = "images/alien/alienrwalk0.gif";
+        alien.id = "alien";
+        alien.style.position = "absolute";
+        alien.style.left = "10px"
+        document.body.appendChild(alien);
+      }
+
+
+      /*Creating Variables*/
+          alienMoveTimer = null;
+
+        /*Setting Up Alien Gifs*/
+            stepNumber = 0;
+
+            function takeRStep() 
             {
-              stepNumber = 0;
+              stepNumber++;
+              if (stepNumber >= 30)
+              {
+                stepNumber = 0;
+              }
+              alien.src = "images/alien/alienrwalk" + stepNumber + ".gif";
             }
-            alien.src = "images/alien/alienrwalk" + stepNumber + ".gif";
-          }
 
-          function takeLStep() 
-          {
-            stepNumber++;
-            if (stepNumber >= 30)
+            function takeLStep() 
             {
-              stepNumber = 0;
+              stepNumber++;
+              if (stepNumber >= 30)
+              {
+                stepNumber = 0;
+              }
+              alien.src = "images/alien/alienlwalk" + stepNumber + ".gif";
             }
-            alien.src = "images/alien/alienlwalk" + stepNumber + ".gif";
-          }
 
 
-      /*Setting up Alien Movement*/
-          function moveAlienRight()
-          {
-            clearInterval(alienMoveTimer);
-            alienMoveTimer = setInterval(function ()
-            {
-              takeRStep();
-              distance_Move(); //this function is called later to detect screen edge
-              document.getElementById("alien").style.left = parseInt(document.getElementById("alien").style.left) + 1 + "px";
-            }
-            , 100);
-          }
-
-          function moveAlienLeft()
-          {
-            clearInterval(alienMoveTimer);
-            alienMoveTimer = setInterval(function ()
-            {
-              takeLStep();
-              distance_Move(); //this function is called later to detect screen edge
-              document.getElementById("alien").style.left = parseInt(alien.style.left) - 1 + "px";
-            }
-            , 100);
-          }
-
-          function runAlienRight()
-          {
-            clearInterval(alienMoveTimer);
-            alienMoveTimer = setInterval(function ()
-            {
-              takeRStep();
-              distance_Run(); //this function is called later to detect screen edge
-              document.getElementById("alien").style.left = parseInt(document.getElementById("alien").style.left) + 1 + "px";
-            }
-            , 10);
-          }
-
-          function runAlienLeft()
-          {
-            clearInterval(alienMoveTimer);
-            alienMoveTimer = setInterval(function ()
-            {
-              takeLStep();
-              distance_Run(); //this function is called later to detect screen edge
-              document.getElementById("alien").style.left = parseInt(document.getElementById("alien").style.left) - 1 + "px";
-            }
-            , 10);
-          }
-
-          function stopMoving()
-          {
-            if (alienMoveTimer != null) 
+        /*Setting up Alien Movement*/
+            function moveAlienRight()
             {
               clearInterval(alienMoveTimer);
-              alienMoveTimer = null;
+              alienMoveTimer = setInterval(function ()
+              {
+                takeRStep();
+                distance_Move(); //this function is called later to detect screen edge
+                document.getElementById("alien").style.left = parseInt(document.getElementById("alien").style.left) + 1 + "px";
+              }
+              , 100);
             }
-          }
 
-          function distance_Move()
-          {
-            if(document.getElementById("alien").style.left === "10px")
+            function moveAlienLeft()
             {
-              moveAlienRight();
+              clearInterval(alienMoveTimer);
+              alienMoveTimer = setInterval(function ()
+              {
+                takeLStep();
+                distance_Move(); //this function is called later to detect screen edge
+                document.getElementById("alien").style.left = parseInt(alien.style.left) - 1 + "px";
+              }
+              , 100);
+            }
 
-            }
-            else if(alien.style.left === "100px")
+            function runAlienRight()
             {
-              moveAlienLeft();
+              clearInterval(alienMoveTimer);
+              alienMoveTimer = setInterval(function ()
+              {
+                takeRStep();
+                distance_Run(); //this function is called later to detect screen edge
+                document.getElementById("alien").style.left = parseInt(document.getElementById("alien").style.left) + 1 + "px";
+              }
+              , 10);
             }
-          }
 
-          function distance_Run()
-          {
-            if(document.getElementById("alien").style.left === "10px")
+            function runAlienLeft()
             {
-              runAlienRight();
+              clearInterval(alienMoveTimer);
+              alienMoveTimer = setInterval(function ()
+              {
+                takeLStep();
+                distance_Run(); //this function is called later to detect screen edge
+                document.getElementById("alien").style.left = parseInt(document.getElementById("alien").style.left) - 1 + "px";
+              }
+              , 10);
             }
-            else if(alien.style.left === "100px")
+
+            function stopMoving()
             {
-              runAlienLeft();
+              if (alienMoveTimer != null) 
+              {
+                clearInterval(alienMoveTimer);
+                alienMoveTimer = null;
+              }
             }
-          }
+
+            function distance_Move()
+            {
+              if(document.getElementById("alien").style.left === "10px")
+              {
+                moveAlienRight();
+
+              }
+              else if(alien.style.left === "100px")
+              {
+                moveAlienLeft();
+              }
+            }
+
+            function distance_Run()
+            {
+              if(document.getElementById("alien").style.left === "10px")
+              {
+                runAlienRight();
+              }
+              else if(alien.style.left === "100px")
+              {
+                runAlienLeft();
+              }
+            }
 
 }
+
 
 
 
