@@ -41,6 +41,7 @@
     myButton.onclick=function()
     {
       var textarea = document.getElementById("txt");
+      var docImage = document.images.length;
       
       //ADD IN FUNCTION TO CONVERT INPUT TO LOWER CASE
       if(textarea.value.includes("storage"))
@@ -74,11 +75,29 @@
         CreateAlien();
       }
 
+      if(docImage = 1 && textarea.value.includes("walk"))
+      {
+          console.log("walk")
+      }
+
+      if(docImage = 1 && textarea.value.includes("run"))
+      {
+          console.log("run")
+      }
+      if(docImage = 1 && textarea.value.includes("stop"))
+      {
+          console.log("stop")
+      }
+      if(docImage = 1 && textarea.value.includes("bye"))
+      {
+          console.log("bye")
+          document.getElementById("alien").style = "display:none;"
+      }
     }
-  }
+  
 
   //-------------- functions when button is pressed ----------------//
-  //-------------- Local Sotrage ----------------//
+  //-------------- Local Storage ----------------//
   function CreateStorage(){
     var storagelink = document.createElement("a");
     storagelink.href = "./storage.html"
@@ -87,11 +106,13 @@
 
     console.log("storage test")
   }
+
   //-------------- Jquery Images and Styling ----------------//
   function CreateJquery(){
     
     console.log("jquery test")
   }
+
   //-------------- Plugin ----------------//
   function CreatePlugin(){
     var pluginlink = document.createElement("a");
@@ -101,6 +122,7 @@
 
     console.log("plugin test")
   }
+
   //-------------- Ajax ----------------//
   function CreateAjax(){
     
@@ -148,76 +170,71 @@
     alien.src = "images/alien/alienrwalk0.gif"
     alien.id = "alien"
     document.body.appendChild(alien);
-
-    // function setUpTimers()
-    // {
-    //     alienImg = document.getElementById("alien");
-    // }
   }
+
 
 //-------------- Alien Walk ----------------//
-  function AlienWalk()
-  {
-    CreateAlien();
-              /*Creating Variables*/
-                  alienMoveTimer = null;
-                  alienUpTimer = null;
+    function AlienWalk()
+    {
+                /*Creating Variables*/
+                    alienMoveTimer = null;
+                    alienUpTimer = null;
 
-              /*Setting Up Alien Gifs*/
-                  stepNumber = 0;
+                /*Setting Up Alien Gifs*/
+                    stepNumber = 0;
 
-                  function takeRStep() 
-                  {
-                    stepNumber++;
-                    if (stepNumber >= 30)
+                    function takeRStep() 
                     {
-                      stepNumber = 0;
+                      stepNumber++;
+                      if (stepNumber >= 30)
+                      {
+                        stepNumber = 0;
+                      }
+                      alien.src = "alien/alienrwalk" + stepNumber + ".gif";
                     }
-                    alien.src = "alien/alienrwalk" + stepNumber + ".gif";
-                  }
 
-                  function takeLStep() 
-                  {
-                    stepNumber++;
-                    if (stepNumber >= 30)
+                    function takeLStep() 
                     {
-                      stepNumber = 0;
+                      stepNumber++;
+                      if (stepNumber >= 30)
+                      {
+                        stepNumber = 0;
+                      }
+                      alien.src = "alien/alienlwalk" + stepNumber + ".gif";
                     }
-                    alien.src = "alien/alienlwalk" + stepNumber + ".gif";
-                  }
 
 
-              /*Setting up Alien Movement*/
-                  //setting up alien to move right//
-                  function moveAlienRight()
-                  {
-                    clearInterval(alienMoveTimer);
-                    alienMoveTimer = setInterval(function ()
+                /*Setting up Alien Movement*/
+                    //setting up alien to move right//
+                    function moveAlienRight()
                     {
-                      takeRStep();
-                      //dis_Measure(); //this function is called later to detect screen edge
-                      alien.style.left = parseInt(alien.style.left) + 1 + "px";
+                      clearInterval(alienMoveTimer);
+                      alienMoveTimer = setInterval(function ()
+                      {
+                        takeRStep();
+                        //dis_Measure(); //this function is called later to detect screen edge
+                        alien.style.left = parseInt(alien.style.left) + 1 + "px";
+                      }
+                      , 100);
                     }
-                    , 100);
-                  }
-                  //setting up alien to move left//   
-                  function moveAlienLeft()
-                  {
-                    clearInterval(alienMoveTimer);
-                    alienMoveTimer = setInterval(function ()
+                    //setting up alien to move left//   
+                    function moveAlienLeft()
                     {
-                      takeLStep();
-                      //dis_Measure(); //this function is called later to detect screen edge
-                      alien.style.left = parseInt(alien.style.left) - 1 + "px";
+                      clearInterval(alienMoveTimer);
+                      alienMoveTimer = setInterval(function ()
+                      {
+                        takeLStep();
+                        //dis_Measure(); //this function is called later to detect screen edge
+                        alien.style.left = parseInt(alien.style.left) - 1 + "px";
+                      }
+                      , 100);
                     }
-                    , 100);
-                  }
 
-              /*Setting Up Screen-edge Detection*/
-  }
+                /*Setting Up Screen-edge Detection*/
+    }
 
 
-
+}
   </script>
 </head>
 
