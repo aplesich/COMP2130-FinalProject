@@ -3,16 +3,13 @@ Work Distribution
 Maharlika
 - Index
 - Jquery
-- Json
-- Storage
+- Ajax
 - Plugin
 
 Alicia
 - Alien
 - Alphabet
 - Storage
-- Plugin
 
-Completion Goal: May 7
-Deadline: May 9
+Deadline: May 9, 11:59pm
 
