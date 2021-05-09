@@ -81,6 +81,7 @@
       if(docImage = 1 && textarea.value.includes("run"))
       {
           console.log("run")
+          runAlienRight();
       }
       if(docImage = 1 && textarea.value.includes("stop"))
       {
@@ -210,7 +211,7 @@
             alienMoveTimer = setInterval(function ()
             {
               takeRStep();
-              dis_Measure(); //this function is called later to detect screen edge
+              distance_Move(); //this function is called later to detect screen edge
               document.getElementById("alien").style.left = parseInt(document.getElementById("alien").style.left) + 1 + "px";
             }
             , 100);
@@ -222,10 +223,34 @@
             alienMoveTimer = setInterval(function ()
             {
               takeLStep();
-              dis_Measure(); //this function is called later to detect screen edge
+              distance_Move(); //this function is called later to detect screen edge
               document.getElementById("alien").style.left = parseInt(alien.style.left) - 1 + "px";
             }
             , 100);
+          }
+
+          function runAlienRight()
+          {
+            clearInterval(alienMoveTimer);
+            alienMoveTimer = setInterval(function ()
+            {
+              takeRStep();
+              distance_Run(); //this function is called later to detect screen edge
+              document.getElementById("alien").style.left = parseInt(document.getElementById("alien").style.left) + 1 + "px";
+            }
+            , 10);
+          }
+
+          function runAlienLeft()
+          {
+            clearInterval(alienMoveTimer);
+            alienMoveTimer = setInterval(function ()
+            {
+              takeLStep();
+              distance_Run(); //this function is called later to detect screen edge
+              document.getElementById("alien").style.left = parseInt(document.getElementById("alien").style.left) - 1 + "px";
+            }
+            , 10);
           }
 
           function stopMoving()
@@ -237,15 +262,28 @@
             }
           }
 
-          function dis_Measure()
+          function distance_Move()
           {
             if(document.getElementById("alien").style.left === "10px")
             {
               moveAlienRight();
+
             }
             else if(alien.style.left === "100px")
             {
               moveAlienLeft();
+            }
+          }
+
+          function distance_Run()
+          {
+            if(document.getElementById("alien").style.left === "10px")
+            {
+              runAlienRight();
+            }
+            else if(alien.style.left === "100px")
+            {
+              runAlienLeft();
             }
           }
 
