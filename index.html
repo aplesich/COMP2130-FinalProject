@@ -8,9 +8,11 @@
     body{
       background-color: lightgrey;
     }
-  </style>
-  <script>
 
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <script>
 
   onload=function()
   { 
@@ -20,19 +22,24 @@
     textbox.type = "text"
     textbox.class = "txtbox"
     textbox.id = "txt"
-    textbox.style.marginBottom = "30px";
+    textbox.style.margin = "20px";
+    textbox.style.padding = "5px";
+    textbox.style.width = "15em";
     document.body.appendChild(textbox)
-    textbox.focus()
 
 
     var myButton = document.createElement("input")
     myButton.type = "button"
     myButton.id = "go"
     myButton.value = "Go"
-    myButton.style.backgroundColor = "DarkSeaGreen";
-    myButton.style.margin = "0 10px";
-    myButton.style.padding = "1px 10px";
+    myButton.style.margin = "0 -10px";
+    myButton.style.padding = "6px 11px";
+    myButton.style.border = "1px solid black";
+    myButton.style.position = "relative";
+    myButton.style.right = "12px";
+    myButton.style.backgroundColor = "#ADDAB9";
     document.body.appendChild(myButton)
+
     document.body.appendChild(document.createElement('br'))
 
     //--------------- run a certain function when button is pressed ---------------//
@@ -40,28 +47,33 @@
     {
       var textarea = document.getElementById("txt");
       var docImage = document.images.length;
-      
-      if(textarea.value.includes("storage"))
+      var text = textarea.value.toLowerCase()
+
+      if(text.includes("storage"))
       {
         CreateStorage()
+        CreateBr()
       }
 
-      if(textarea.value.includes("jquery"))
+      if(text.includes("jquery"))
       {
         CreateJquery()
+        CreateBr()
       }
 
-      if(textarea.value.includes("plugin"))
+      if(text.includes("plugin"))
       {
         CreatePlugin()
+        CreateBr()
       }
 
-      if(textarea.value.includes("ajax"))
+      if(text.includes("ajax"))
       {
         CreateAjax()
+        CreateBr()
       }
 
-      if(textarea.value.includes("alphabet"))
+      if(text.includes("alphabet"))
       {
         CreateAlphabet()
       }
@@ -72,13 +84,11 @@
       {
         CreateAlien();
       }
-
       if(docImage = 1 && textarea.value.includes("walk"))
       {
           console.log("walk")
           moveAlienRight();
       }
-
       if(docImage = 1 && textarea.value.includes("run"))
       {
           console.log("run")
@@ -98,38 +108,54 @@
     }
   
 
-  //-------------- functions when button is pressed ----------------//
-  //-------------- Local Storage ----------------//
-    function CreateStorage(){
-      var storagelink = document.createElement("a");
-      storagelink.href = "./storage.html"
-      storagelink.innerText = "Learn about \"window.localStorage\"";
-      document.body.appendChild(storagelink);
+ //-------------- functions when button is pressed ----------------//
+      function CreateBr()
+      {
+        var br = document.createElement("br");
+        document.body.appendChild(br);
+      }
+ //-------------- Local Storage ----------------//
+  //Both
+      function CreateStorage()
+      {
+        var storagelink = document.createElement("a");
+        storagelink.href = "./storage.html"
+        storagelink.innerText = "Learn about \"window.localStorage\"";
+        document.body.appendChild(storagelink);
 
-      console.log("storage test")
-    }
 
-    //-------------- Jquery Images and Styling ----------------//
-    function CreateJquery(){
-      
-      console.log("jquery test")
-    }
+        console.log("storage test")
+      }
+//-------------- Plugin ----------------//
+//Both
+      function CreatePlugin()
+      {
+        var pluginlink = document.createElement("a");
+        pluginlink.href = "./plugin.html"
+        pluginlink.innerText = "Click here for something cool";
+        document.body.appendChild(pluginlink);  
 
-    //-------------- Plugin ----------------//
-    function CreatePlugin(){
-      var pluginlink = document.createElement("a");
-      pluginlink.href = "./plugin.html"
-      pluginlink.innerText = "Click here for something cool";
-      document.body.appendChild(pluginlink);  
+        console.log("plugin test")
+      }
 
-      console.log("plugin test")
-    }
+//-------------- Jquery Images and Styling ----------------//
+//Maharlika
+       function CreateJquery()
+        {
+        for(let i = 0; i < 4; i++) 
+        {
+          const img = document.createElement("img");
+          img.src = "http://placekitten.com/600/700";
+          img.style.margin = "10px";
+          document.body.appendChild(img);
+        }
 
-    //-------------- Ajax ----------------//
-    function CreateAjax(){
-      
-      console.log("ajax test")
-    }
+        $("img").width("200px");
+
+        $("img").eq(1).click(function()
+         {$(this).css('border', '15px solid red');})
+        console.log("jquery test")
+        }
 
   //-------------- Alphabet ----------------//
   // Alicia 
@@ -144,6 +170,7 @@
               myImage.id = myLetter
               myImage.height = 40
 
+
               myImage.onclick = function()
               {
                 var allImages = document.getElementsByTagName("img")
@@ -156,14 +183,36 @@
                     allImages[i].src = this.src
                   }
                 }
-              }
+            }
 
-              document.body.appendChild(myImage)
+//-------------- Ajax ----------------//
+//Maharlika
+  function CreateAjax()
+            {
+                var r = new XMLHttpRequest()
+                r.open("GET", "advice.txt", true)
+                r.onreadystatechange=loadData
+                r.send(null)
 
-          }
-          
-    
-    }
+                function loadData()
+                {
+                  if(r.readyState == 4)
+                  {
+                    var adviceTxt = r.responseText
+                    var adviceArray = JSON.parse(adviceTxt)
+                    var advice = adviceArray.join(" ")
+
+                    var adviceUp = advice.toUpperCase()
+
+                    var h1 = document.createElement("h1");
+                    h1.innerText = adviceUp;
+                    document.body.appendChild(h1);
+                  }
+                }
+            document.body.appendChild(myImage);
+            }
+
+
 
   //-------------- Alien ----------------//
   //Alicia
@@ -288,8 +337,7 @@
             }
           }
 
-
-      }
+}
 
 
 
