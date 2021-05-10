@@ -1,69 +1,39 @@
-<<<<<<< HEAD
-project (comp 2130)
-=======
-project (comp 2130) //git pull + git push 
->>>>>>> 0e692c2b34469ab26f9966e7b5edfdd337450027
-
-create a repository
-find a plugin 
-sort out the textbox 
-
 4 pages:
 index
 storage
 plugin 
 advice  
 
+task 0 (MAHARLIKA)
+set up index.html
 ONE textbox -> type something
 ONE Button -> press button to trigger the dynamic page
 
-<<<<<<< HEAD
-task 1
-=======
-task 1 (BOTH)
->>>>>>> 0e692c2b34469ab26f9966e7b5edfdd337450027
+task 1 (ALICIA)
 type "storage"
 press button below text box-> creates a link
 the link takes you to teaches you about local storage 
 
 
-<<<<<<< HEAD
-task 2 (alicia)
-=======
-task 2 (AMP)
->>>>>>> 0e692c2b34469ab26f9966e7b5edfdd337450027
+task 2 (ALICIA)
 type alien -> reveals the alien 
 type walk -> alien walks across the screen ( not exiting the screen boundary)
 type run -> alien moves faster
 type stop -> alien stops moving
 type bye -> display: none
 
-<<<<<<< HEAD
-task 3
-type jquery -> 4 images get created (append child)
-find the second image -> it will get a red border when it is clicked
-
-task 4
-type plugin -> dynamically create the link
-
-task 5
-type ajax -> should display a parced advice.txt (json file, which is an array of strings that makes a sentence) -> loop through array, upper case the strings, and it turns into an h1
-
-task 6 (alicia)
-=======
 (Notes: struggled to get the alien to move because it wasn't positioned absolute)
 
 task 3 (MAHARLIKA)
 type jquery -> 4 images get created (append child)
 find the second image -> it will get a red border when it is clicked
 
-task 4 (BOTH)
+task 4 (MAHARLIKA)
 type plugin -> dynamically create the link
 
 task 5 (MAHARLIKA)
 type ajax -> should display a parced advice.txt (json file, which is an array of strings that makes a sentence) -> loop through array, upper case the strings, and it turns into an h1
 
-task 6 (AMP)
->>>>>>> 0e692c2b34469ab26f9966e7b5edfdd337450027
+task 6 (ALICIA)
 type alphabet -> create a bunch of letter images (the 26) placed in reversed order
 when an image is clicked, the source is replaced
