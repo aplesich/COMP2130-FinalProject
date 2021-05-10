@@ -106,32 +106,24 @@
   <script>
     onload=function()
     {
-      
 
       // tutorial: https://zzz.dog/getting-started
       // Made with Zdog
 
-      ////////////////////////////////////////////////////////////////////////
-
       ///////////////////////////////////////////////////////////////////////
 
-
-      // create canvas selector
       const illo = new Zdog.Illustration({
-        // set canvas with selector
         element: '.zdog-canvas1',
         zoom: 3.2,
       });
 
       let dome = new Zdog.Hemisphere({
-      addTo: illo,
-      diameter: 50,
-      // fill enabled by default
-      // disable stroke for crisp edge
-      stroke: false,
-      rotate: { x: -Zdog.TAU/10 },
-      color: '#C25',
-      backface: '#EA0',
+        addTo: illo,
+        diameter: 50,
+        stroke: false,
+        rotate: { x: -Zdog.TAU/10 },
+        color: '#C25',
+        backface: '#EA0',
       });
       
 
@@ -145,22 +137,20 @@
 
       ////////////////////////////////////////////////////////////////
 
-        // create canvas selector
       const illo2 = new Zdog.Illustration({
-      // set canvas with selector
-      element: '.zdog-canvas2',
-      zoom: 3,
+        element: '.zdog-canvas2',
+        zoom: 3,
       });
 
       let partyHat = new Zdog.Cone({
-      addTo: illo2,
-      diameter: 40,
-      length: 50,
-      stroke: false,
-      translate: { y: -5 },
-      rotate: { x: -Zdog.TAU/10 },
-      color: '#636',
-      backface: '#C25',
+        addTo: illo2,
+        diameter: 40,
+        length: 50,
+        stroke: false,
+        translate: { y: -5 },
+        rotate: { x: -Zdog.TAU/10 },
+        color: '#636',
+        backface: '#C25',
       });
 
       function animate2() {
@@ -172,26 +162,24 @@
       animate2();
 
       ////////////////////////////////////////////////////////////////
-        
-      // create canvas selector
-        const illo3 = new Zdog.Illustration({
-      // set canvas with selector
-      element: '.zdog-canvas3',
-      zoom: 2.3,
+    
+      const illo3 = new Zdog.Illustration({
+        element: '.zdog-canvas3',
+        zoom: 2.3,
       });
 
       let box = new Zdog.Box({
-      addTo: illo3,
-      width: 50,
-      height: 50,
-      depth: 50,
-      rotate: { x: -Zdog.TAU/5 },
-      stroke: 1,
-      color: '#C25', // default face color
-      leftFace: '#EA0',
-      rightFace: '#E62',
-      topFace: '#ED0',
-      bottomFace: '#636',
+        addTo: illo3,
+        width: 50,
+        height: 50,
+        depth: 50,
+        rotate: { x: -Zdog.TAU/5 },
+        stroke: 1,
+        color: '#C25',
+        leftFace: '#EA0',
+        rightFace: '#E62',
+        topFace: '#ED0',
+        bottomFace: '#636',
       });
 
       function animate3() {
@@ -203,22 +191,20 @@
       animate3();
 
     ////////////////////////////////////////////////////////////////
-      
-    // create canvas selector
+    
     const illo4 = new Zdog.Illustration({
-    // set canvas with selector
-    element: '.zdog-canvas4',
-    zoom: 2.3,
+      element: '.zdog-canvas4',
+      zoom: 2.3,
     });
 
     let can = new Zdog.Cylinder({
-    addTo: illo4,
-    diameter: 50,
-    length: 50,
-    stroke: false,
-    rotate: { x: -Zdog.TAU/10 },
-    color: '#C25',
-    backface: '#E62',
+      addTo: illo4,
+      diameter: 50,
+      length: 50,
+      stroke: false,
+      rotate: { x: -Zdog.TAU/10 },
+      color: '#C25',
+      backface: '#E62',
     });
 
     function animate4() {
@@ -229,114 +215,113 @@
 
     animate4();
 
-    ////////////////////////////////////////
-    ////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
 
     const illo5 = new Zdog.Illustration({
-    // set canvas with selector
-    element: '.large-canvas',
-    zoom: 1,
+      element: '.large-canvas',
+      zoom: 1,
     });
 
     let sun = new Zdog.Shape({
-    addTo: illo5,
-    stroke: 90,
-    rotate: { x: -Zdog.TAU/10 },
-    color: 'lightyellow',
+      addTo: illo5,
+      stroke: 90,
+      rotate: { x: -Zdog.TAU/10 },
+      color: 'lightyellow',
     });
 
     let sun2 = new Zdog.Shape({
-    addTo: illo5,
-    stroke: 120,
-    color: 'rgba(255, 217, 0, 0.259)',
+      addTo: illo5,
+      stroke: 120,
+      color: 'rgba(255, 217, 0, 0.259)',
     });
 
     let sun3 = new Zdog.Shape({
-    addTo: illo5,
-    stroke: 140,
-    color: 'rgba(255, 217, 0, 0.259)',
+      addTo: illo5,
+      stroke: 140,
+      color: 'rgba(255, 217, 0, 0.259)',
     });
 
     let sun4 = new Zdog.Shape({
-    addTo: illo5,
-    stroke: 170,
-    color: 'rgba(255, 245, 101, 0.259)',
+      addTo: illo5,
+      stroke: 170,
+      color: 'rgba(255, 245, 101, 0.259)',
     });
 
     //mercury
     new Zdog.Shape({
-    addTo: sun,
-    stroke: 10,
-    translate: { x: -80, z: 100 },
-    color: '#A9A298',
+      addTo: sun,
+      stroke: 10,
+      translate: { x: -80, z: 100 },
+      color: '#A9A298',
     });
 
     //venus
     new Zdog.Shape({
-    addTo: sun,
-    stroke: 25,
-    translate: { x: 105, z: 30 },
-    color: '#F5C682',
+      addTo: sun,
+      stroke: 25,
+      translate: { x: 105, z: 30 },
+      color: '#F5C682',
     });
 
     //earth
     new Zdog.Shape({
-    addTo: sun,
-    stroke: 30,
-    translate: { x: -140, z: -30 },
-    color: '#2A63BE',
+      addTo: sun,
+      stroke: 30,
+      translate: { x: -140, z: -30 },
+      color: '#2A63BE',
     });
 
     //mars
     new Zdog.Shape({
-    addTo: sun,
-    stroke: 25,
-    translate: { x: 175, z: 80 },
-    color: '#BE482A',
+      addTo: sun,
+      stroke: 25,
+      translate: { x: 175, z: 80 },
+      color: '#BE482A',
     });
 
     //jupiter
     new Zdog.Shape({
-    addTo: sun,
-    stroke: 60,
-    translate: { x: -230, z: -60 },
-    color: '#FAA92D',
+      addTo: sun,
+      stroke: 60,
+      translate: { x: -230, z: -60 },
+      color: '#FAA92D',
     });
 
     //saturn
     new Zdog.Shape({
-    addTo: sun,
-    stroke: 50,
-    translate: { x: 310, z: 200 },
-    color: '#FFDF80',
+      addTo: sun,
+      stroke: 50,
+      translate: { x: 310, z: 200 },
+      color: '#FFDF80',
     });
 
     //uranus
     new Zdog.Shape({
-    addTo: sun,
-    stroke: 40,
-    translate: { x: -400, z: 40 },
-    color: '#9EFBF3',
+      addTo: sun,
+      stroke: 40,
+      translate: { x: -400, z: 40 },
+      color: '#9EFBF3',
     });
 
     //neptune
     new Zdog.Shape({
-    addTo: sun,
-    stroke: 35,
-    translate: { x: 480, z: -120 },
-    color: '#82BBFF',
+      addTo: sun,
+      stroke: 35,
+      translate: { x: 480, z: -120 },
+      color: '#82BBFF',
     });
 
     //pluto
     new Zdog.Shape({
-    addTo: sun,
-    stroke: 5,
-    translate: { x: -550, z: 0 },
-    color: 'grey',
+      addTo: sun,
+      stroke: 5,
+      translate: { x: -550, z: 0 },
+      color: 'grey',
     });
 
     function animate5() {
-      illo5.rotate.y -= 0.01;
+      illo5.rotate.y -= 0.008;
       illo5.updateRenderGraph();
       requestAnimationFrame( animate5 );
     }
@@ -344,9 +329,6 @@
     animate5();
 
   }
-
-
-
 
   </script>
 </head>
@@ -361,7 +343,7 @@
     <canvas class="zdog-canvas3 canvas-size" width="500" height="250"></canvas>
     <canvas class="zdog-canvas4 canvas-size" width="500" height="250"></canvas>
   </div>
-  <h2>Learn more at <span style="color: #EA0">zzz.dog</span></h2>
+  <h2>Learn more at <span style="color: #EA0"><a href="https://zzz.dog/">zzz.dog</a></span></h2>
   <div class="large-container">
     <canvas class="large-canvas"  width="1300" height="800"></canvas>
   </div>

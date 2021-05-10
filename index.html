@@ -4,45 +4,87 @@
 <head>
   <meta charset="UTF-8">
   <title>Web Programming: Term Project</title>
+
   <style>
     body{
-      background-color: lightgrey;
+      background: #7b65af;
+      font-family: 'Special Elite', cursive;
+      margin-left: 20px;
+    }
+
+    a {
+      font-size: 1.5em;
+    }
+    a:link {
+      color: rgb(255, 214, 160);
+    }
+    a:visited {
+      color: rgb(69, 32, 143);
+    }
+    a:hover {
+      color: rgb(255, 190, 105);
+    }
+    a:active {
+      color: rgb(206, 181, 255);
     }
 
   </style>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <script>
+
+  /*///////////////////////////////////////////////////////////////
+
+  Web Programming: Term Project ----- Work Distribution
+
+  Maharlika Clomata
+  - Index
+  - Jquery
+  - Ajax
+  - Plugin
+
+  Alicia Plesich
+  - Alien
+  - Alphabet
+  - Storage
+
+  //////////////////////////////////////////////////////////////////*/
 
   onload=function()
   { 
-
       //------------ create text boxes and button ---------------//
+      //Maharlika
       var textbox = document.createElement("input")
       textbox.type = "text"
       textbox.class = "txtbox"
       textbox.id = "txt"
-      textbox.style.margin = "20px";
+      textbox.style.margin = "20px 0px";
       textbox.style.padding = "5px";
-      textbox.style.width = "15em";
+      textbox.style.width = "20em";
+      textbox.style.height = "1.5em";
+      textbox.style.borderRadius = "10px";
       document.body.appendChild(textbox)
-
 
       var myButton = document.createElement("input")
       myButton.type = "button"
       myButton.id = "go"
       myButton.value = "Go"
-      myButton.style.margin = "0 -10px";
-      myButton.style.padding = "6px 11px";
-      myButton.style.border = "1px solid black";
-      myButton.style.position = "relative";
-      myButton.style.right = "12px";
-      myButton.style.backgroundColor = "#ADDAB9";
+      myButton.style.margin = "0 5px";
+      myButton.style.padding = "5px 20px";
+      myButton.style.borderRadius = "10px";
+      myButton.style.fontSize = "1.2em";
+      myButton.style.fontWeight = "bolder";
+      myButton.style.backgroundColor = "LightGoldenrodYellow";
       document.body.appendChild(myButton)
 
       document.body.appendChild(document.createElement('br'))
 
+
       //--------------- run a certain function when button is pressed ---------------//
+      //Maharlika
       myButton.onclick=function()
       {
               var textarea = document.getElementById("txt");
@@ -79,7 +121,7 @@
                 CreateBr()
               }
 
-              /*Alien Stuff*/
+              //--------------*Alien Stuff*-----------------//
               //Alicia
               if(text.includes("alien"))
               {
@@ -110,78 +152,85 @@
     
 
   //-------------- functions when button is pressed ----------------//
+  //Maharlika
         function CreateBr()
         {
           var br = document.createElement("br");
           document.body.appendChild(br);
         }
+
+
   //-------------- Local Storage ----------------//
-    //Alicia
+  //Alicia
         function CreateStorage()
         {
           var storagelink = document.createElement("a");
           storagelink.href = "./storage.html"
           storagelink.innerText = "Learn about \"window.localStorage\"";
+          storagelink.style.margin = "10px";
           document.body.appendChild(storagelink);
-          console.log("storage test")
         }
+
+
   //-------------- Plugin ----------------//
   //Maharlika
         function CreatePlugin()
         {
           var pluginlink = document.createElement("a");
           pluginlink.href = "./plugin.html"
-          pluginlink.innerText = "Click here to checkout a cool plugin";
+          pluginlink.innerText = "Click here to view plugin";
+          pluginlink.style.margin = "10px";
           document.body.appendChild(pluginlink);  
-
         }
+
 
   //-------------- Jquery Images and Styling ----------------//
   //Maharlika
         function CreateJquery()
+        {
+          for(let i = 0; i < 4; i++) 
           {
-              for(let i = 0; i < 4; i++) 
-              {
-                const img = document.createElement("img");
-                img.src = "http://placekitten.com/600/700";
-                img.style.margin = "10px";
-                document.body.appendChild(img);
-              }
-
-          $("img").width("200px");
-            $("img").eq(1).click(function()
-            {$(this).css('border', '15px solid red');})
-            console.log("jquery test")
+            const img = document.createElement("img");
+            img.src = "http://placekitten.com/600/700";
+            img.style.margin = "10px";
+            document.body.appendChild(img);
           }
+
+        $("img").width("200px");
+
+        $("img").eq(1).click(function()
+        {$(this).css('border', '15px solid red');})
+        }
           
 
-    //-------------- Alphabet ----------------//
-    // Alicia 
-    function CreateAlphabet(){
-        for(let i = 'z'.charCodeAt(0); i >= 'a'.charCodeAt(0); i--)
-        {
-            // console.log(String.fromCharCode(i))
-            var myLetter = String.fromCharCode(i)
-            var myImage = document.createElement('img')
-            myImage.src = "images/letters/" + myLetter + ".png"
-            myImage.id = myLetter
-            myImage.height = 40
-            myImage.classList = "abc"
-            myImage.onclick = function()
+  //-------------- Alphabet ----------------//
+  // Alicia 
+  function CreateAlphabet(){
+      for(let i = 'z'.charCodeAt(0); i >= 'a'.charCodeAt(0); i--)
+      {
+          // console.log(String.fromCharCode(i))
+          var myLetter = String.fromCharCode(i)
+          var myImage = document.createElement('img')
+          myImage.src = "images/letters/" + myLetter + ".png"
+          myImage.id = myLetter
+          myImage.height = 40
+          myImage.classList = "abc"
+          myImage.onclick = function()
+          {
+            var allImages = document.getElementsByClassName("abc")
+            var imageSrc = allImages.src
+            for (i=0;i<26;i++)
             {
-              var allImages = document.getElementsByClassName("abc")
-              var imageSrc = allImages.src
-              for (i=0;i<26;i++)
+              if(imageSrc != this.src)
               {
-                if(imageSrc != this.src)
-                {
-                  allImages[i].src = this.src
-                }
+                allImages[i].src = this.src
               }
             }
-            document.body.appendChild(myImage)
-        }
-    }
+          }
+          document.body.appendChild(myImage)
+      }
+  }
+
 
   //-------------- Ajax ----------------//
   //Maharlika
@@ -204,12 +253,16 @@
 
                       var h1 = document.createElement("h1");
                       h1.innerText = adviceUp;
+                      h1.style.maxWidth = "1300px";
+                      h1.style.margin = "20px 0";
+                      h1.style.padding = "10px";
+                      h1.style.border = "10px solid black";
+                      h1.style.background = "white";
                       document.body.appendChild(h1);
                     }
                   }
               document.body.appendChild(myImage);
               }
-
 
 
     //-------------- Alien ----------------//
@@ -338,11 +391,10 @@
 
 }
 
-  </script>
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+</script>
 </head>
 
-<body style="background-color: #b399dd; font-family: 'Special Elite', cursive;">
+<body>
 </body>
 
 </html
