@@ -5,56 +5,89 @@
   <meta charset="UTF-8">
   <title>Learning Local Storage</title>
   <style></style>
-  <script></script>
+  <script>
+    localStorage.setItem("girl", "Helen");
+    //var storedData = localStorage.getItem("girl");
+    //localStorage.clear()  
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 </head>
 
-<body>
+
+<body style="background-color: rgb(131, 8, 125); color: white; font-family: 'Special Elite', cursive;">
   <div>
-    <h1>localStorage</h1>
+    <h1 style="font-size: 2em; margin-bottom: -20px;">localStorage</h1>
     <br><br>
     <h2>Definition </h2>
-    <p>localStorage is a method we may use to store data locally within the user's browser with no expiration date. localStroage will hold the data, with no expiry date, as a result the data will not be deleted even if the browser is closed and opened again.
-    <br>
-    localStorage can be accessed rather quickly compared to back end storage methods, that is why it is an ideal way for a user to store a small amount of relevant data they want to access later. 
-    </p>
+    <div style="background-color: rgb(73, 32, 71); box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; padding: 20px;">
+      <p>localStorage is a method we may use to store data locally within the user's browser with no expiration date. localStroage will hold the data, with no expiry date, as a result the data will not be deleted even if the browser is closed and opened again.
+      <br>
+      localStorage can be accessed rather quickly compared to any back end storage methods, that is why it is an ideal way for a user to store a small amount of relevant data they want to access later. 
+      </p>
+    </div>
 
     <h2>Benefits</h2>
+    <div style="background-color: rgb(73, 32, 71); box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; padding: 20px;">
     <ul>
-      <li>It stores up to 5-10MB of data , the amount of storage allowed is dependant on the browser</li>
-      <li>Easy to use – no need for a web server or backend database.</li>
-      <li>Great for getting an idea up and running and for testing purposes.</li>
+      <li>Storage capacity of up to 5-10MB of data ,note that the amount of storage allowed is dependant on the browser</li>
+      <li>localStorage is easy to use, and there is no need to involve a backend database</li>
+      <li>localStorage is perfect for getting things stored for testing purposes.</li>
     </ul>
+    </div>
 
     <h2>Cautions</h2>
+    <div style="background-color: rgb(73, 32, 71); box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; padding: 20px;">
     <ul>
       <li>Can only be text, data will always be a “read-only” format</li>
-      <li>Anything stored with localstorage is not secure, because it can be accessed relatively quickly with code. As a result, we should never store private or personal information through localStorage.</li>
+      <li>Anything stored with localStorage is not secure, because it can be accessed relatively quickly using code. As a result, we should never store private or personal information through localStorage.</li>
     </ul>
+    </div>
 
     <h2>Syntax</h2>
-    <h3>Add data</h3>
-    <p>To add the data in localStorage, both key and value are required to pass in setItem() function.</p>
-    <ul>
-      <li>localStorage.setItem("girl", "Helen");  </li>
-    </ul>
+    <div style="background-color: rgb(73, 32, 71); box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; padding: 20px;">
+      <div style="background-color: rgb(39, 13, 88); box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; padding: 20px; margin-bottom: 20px;">
+        <h3>Adding new data to localStorage</h3>
+        <p>To add the data in localStorage, both a key and value are required to pass the setItem() function.</p>
+        <ul>
+          <li>localStorage.setItem("girl", "Helen");  </li>
+        </ul>
+      </div>
 
-    <h3>Retrieve data</h3>
-    <p>A key is required to retrieve the data from storage and a JavaScript variable to store the returned data.</p>
-    <ul>
-      <li>var storedData = localStorage.getItem("girl");</li>
-    </ul>
+      <div style="background-color: rgb(39, 13, 88); box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; padding: 20px; margin-bottom: 20px;">
+        <h3>Retrieving stored data</h3>
+        <p>Using a key is required to retrieve your stored data, you will use a JavaScript variable to store the returned data.</p>
+        <ul>
+          <li>var storedData = localStorage.getItem("girl");</li>
+        </ul>
+      </div>
 
-    <h3>Remove data</h3>
-    <p>The same key is required to remove the value attached with it.</p>
-    <ul>
-      <li>localStorage.removeItem("girl");  </li>
-    </ul>
+      <div style="background-color: rgb(39, 13, 88); box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; padding: 20px; margin-bottom: 20px;">
+        <h3>Removing stored data</h3>
+        <p>The same key is required to remove the value attached with it.</p>
+        <ul>
+          <li>localStorage.removeItem("girl");  </li>
+        </ul>
+      </div>
 
-    <h3>Clear localStorage</h3>
-    <p>Using a simple clear() function, it will remove all the localStorage data:</p>
-    <ul>
-      <li>localStorage.clear()  </li>
-    </ul>
+      <div style="background-color: rgb(39, 13, 88); box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; padding: 20px; margin-bottom: 20px;">
+        <h3>Clearing localStorage</h3>
+        <p>Using a simple clear() function, it will remove all the localStorage data:</p>
+        <ul>
+          <li>localStorage.clear()  </li>
+        </ul>
+      </div>
+
+      <div style="background-color: rgb(39, 13, 88); box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; padding: 20px; margin-bottom: 20px;">
+        <h3>A Demonstration</h3>
+        <p>Using Developer tools</p>
+        <div><img src="/images/localStorage.png"></div>
+        <ol>
+          <li>Inspect page</li>
+          <li>Select the correct domain under local storage tab</li>
+          <li>run localStorage commands in console or script section of document</li>
+        </ol>
+      </div>
+  </div>
 
   </div>
 </body>
